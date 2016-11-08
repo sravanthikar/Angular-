@@ -1,0 +1,25 @@
+<form name="RegistrationForm">
+<div ng-controller="nameCtrl" > <!--msg given name in first broadcast-->
+<input type="text"  name="msg" ng-model="msg" ng-focus="user()" required>
+<div  ng-messages="RegistrationForm.msg.$error" ng-show="na">
+<div ng-message="required">The field is required</div>
+</div>
+<button ng-click="details(msg)">Broadcast</button>
+ </div>
+ </form>
+<br/>
+<div ng-controller="nameCtrl1"><!--msg given message in second  broadcast-->
+<input ng-model="msg12">
+<button ng-click="details1(msg12)">save</button> <!--save button is-->
+</div>
+<br/>
+<label>given name :</label><!--msg displayed the given name in first broadcast-->
+<div ng-controller="nameCtrl1">
+<input ng-model="msg1">
+</div>
+<br/> 
+<label>given message :</label><!--msg displayed the given msg in second broadcast-->
+<div ng-controller="nameCtrl2">
+<input ng-model="msg2">
+</div>
+

@@ -1,0 +1,26 @@
+<body ng-controller="myCtrl11">
+<div class="top"><h1>Registration</h1></div>
+<div class="left"><h1>fill up details</h1>
+<img src="https://tse4.mm.bing.net/th?id=OIP.M38d5e520571102616a9c15c224b2759co0&pid=15.1&P=0&w=241&h=161"/></div>
+<div class="right">
+<form name="RegistrationForm">
+ <label> Name : <input type="text" name="name" ng-model="name" ng-focus="user()" required></label>
+ <div ng-messages="RegistrationForm.name.$error" ng-show=na> <!--first we have to show user is   name false and after user enter some thing then we have to say true and show the requied message-->
+   <div ng-message="required">The field is required</div>
+ </div>
+<br/>
+<label> password :<input type="password"  name="password"  ng-model="password" ng-focus="userpswd()" required></label>
+<div ng-messages="Registrationform.password.$error" ng-show=pass><!-- in first div ng-messages should with in div we have ng-message only -->
+<div ng-message="requried" >password requried </div>
+</div>
+<br/> 
+<label> Email :<input type="email" name="email"  ng-model="email"  ng-focus="mail()" required></label>
+<div ng-messages="Registrationform.password.$error" ng-show=email1>
+<div ng-message="requried" >firstname+lastname@gmail.com </div>
+</div>
+<br/>
+<button ng-if="myForm.name.$valid && myForm.password.$valid&& myForm.email.$valid"? ng-disable :ng-enable >submit</button>
+</label>
+</form>
+</div>
+</body>

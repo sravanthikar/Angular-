@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html  data-ng-app="myApp">
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-controller="myCtrl">
+//filter order by try to show data in table by sorting
+<div class="sort" ng-model="myData">
+<ul>
+<li ng-repeat ="data in myData">
+ <p ng-bind="data.name "></p>
+<p ng-bind="data.age "></p>
+</li>
+</ul>
+  <table style=" border:1px solid black" ng-model="mydata">
+    <tr>  <th>
+       name</th>
+                <th ng-click="sortBy('age')"> age    
+      </th>
+       </tr>
+       <tr ng-repeat="data in myData|orderBy:'age'">
+       <td>{{data.name}}</td>
+       <td>{{data.age}}</td>
+       </tr>   
+  </table>
+//events  show and display trying to aceess data from JSon in controller
+<input type="text" name="name" ng-model="myData">
+<p ng-if="name=='sravanthi'">{{myData.age}}</p>
+<button ng-click="showand hide()">show and hide</button>
+<button ng-click="display()">display</button>
+</div>
+<div class="showandhide" color="red">
+<input type="text"  maxlength=50 ng-model="number" ng-disable="dis()"></input>
+
+<button ng-click="save" ng-show="dis()">save</button>
+</div>
+
+  </body>
+  </html>

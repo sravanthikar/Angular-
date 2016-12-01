@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html  data-ng-app="">
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+//filter lowercase
+<div ng-init="persons=[{firstname:'sravanthi',lastname:'karlapati',education:'ece'},{firstname:'deepak',lastname:'karlapati',education:'cse'}]">
+<ul>
+<li ng-repeat="items in persons">
+<p ng-bind="items.education| uppercase"></p>
+</li>
+</ul>
+</div>
+//filter by search case
+<input type="text" ng-model="searchbyfirstname">
+<ul>
+<li ng-repeat ="classmates in persons | filter :searchbyfirstname">
+{{classmates.firstname}}
+<p ng-bind ="classmates.lastname "></p>
+<span ng-bind="classmates.education"></span>
+</li>
+<ul>
+//filter by search using ng-if
+<input type="text" ng-model="searchbyeducation" ng-init="searchbyeducation=true ">
+<div ng-if="searchbyeducation">
+<p>hello world</p>
+</div>
+//filter drop down
+<p ng-init="numbers=[1,2,3,4,5,6]">
+<select label=1  title=1  ng-model="selected">
+<select  ng-model="selected" ng-option="num for num in numbers" ng-init="selected=selected||numbers[0]"> {{num}}</select>
+
+</input>
+
+</p>
+ 
+ </body>
+</html>

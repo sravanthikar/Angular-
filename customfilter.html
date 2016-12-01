@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+   <script type="text/javascript" src="custfilter.js"></script>
+</head>
+<body  ng-app="myfilterapp" ng-controller="myfilterCtrl">
+<label ng-repeat-start="label in labels">{{label}}</label>
+    <input ng-model='values[$index]' type='text' value='' />
+    <br ng-repeat-end>
+
+    <button ng-click="saveEverything()">Save</button>
+<!--<div ng-repeat="val in values | cfilter">{{val}}</div>-->
+
+   
+</body>
+</html>
+
+<!--<label> enter the  names </label>
+<input type="text name="label" ng-model="label">
+
